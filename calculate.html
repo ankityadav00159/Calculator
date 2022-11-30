@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+h1{
+    text-align: center;
+}
+p{
+    text-align: center;
+}
+
+</style>
+<body>
+    <h1>Calculator</h1>
+    <p>First Number : 
+        <input type="number" placeholder="Enter first number"id="fnum" />
+    </p>
+    <p>Select Operator: 
+        <select id="op">
+            <option>Select operator</option>
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+    </p>
+    <p>Second Number :
+        <input type="number" placeholder="Enter second number" id="snum">
+    </p>
+    <p>
+        <button onclick="calculator()">Calculate</button>
+    </p>
+    <p id="cvalue"></p>
+</body>
+
+<script>
+
+function calculator() {
+    let x = document.getElementById('fnum').value;
+    let y = document.getElementById('snum').value;
+    let op = document.getElementById('op').value;
+    switch(op) {
+        case '+':
+            result = parseInt(x)+parseInt(y);
+            document.getElementById('cvalue').innerHTML = result;
+            break;
+            
+        case '/':
+            result = parseInt(x)/parseInt(y);
+            document.getElementById('cvalue').innerHTML = result;
+            break;
+            
+        case '-':
+            result = parseInt(x)-parseInt(y);
+            document.getElementById('cvalue').innerHTML = result;
+            break;
+            
+        case '*':
+            result = parseInt(x)*parseInt(y);
+            document.getElementById('cvalue').innerHTML = result;
+            break;
+            
+        default:
+            document.getElementById('cvalue').innerHTML = result;
+            break;
+    }
+}
+
+</script>
+</html>
